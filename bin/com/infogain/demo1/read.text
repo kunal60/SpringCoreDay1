@@ -1,0 +1,13 @@
+This demo focuses on creating the first spring core project and using Bean Factory and ApplicationContext
+
+
+
+Download the spring jars from 
+
+https://repo.spring.io/release/org/springframework/spring/
+
+Make a userlibrary in Eclipse : and have all the jars downloaded from above
+
+And an additional Commons logging jar from
+
+https://mvnrepository.com/artifact/commons-logging/commons-logging/1.2
