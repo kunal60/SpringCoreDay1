@@ -10,4 +10,18 @@
 
 </bean>
 
+
+ <!-- First bean defination --> 
+<bean id="emp1" class="com.infogain.demo2.Employee">
+<property name="empId" value="101"></property>
+<property name="name" value="Ravic"></property>
+<property name="add" ref="add1"></property>
+
+</bean>
+<bean id="add1" class="com.infogain.demo2.Address">
+<property name="city" value="Noida"></property>
+
+</bean>
+
+
 </beans>

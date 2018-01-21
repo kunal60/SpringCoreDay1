@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
+ <!-- First bean defination --> 
+ 
+<bean id="emp" class="com.infogain.demo1.Employee">
+<property name="empId" value="101"></property>
+<property name="name" value="Ravic"></property>
+<property name="salary" value="356789"></property>
+
+</bean>
+
+
+ <!-- First bean defination --> 
+<bean id="emp1" class="com.infogain.demo2.Employee">
+<property name="empId" value="101"></property>
+<property name="name" value="Ravic"></property>
+<property name="add" ref="add1"></property>
+
+</bean>
+<bean id="add1" class="com.infogain.demo2.Address">
+<property name="city" value="Noida"></property>
+
+</bean>
+
+
+</beans>

@@ -14,7 +14,7 @@ public class MainClass {
 		/*Resource res=new ClassPathResource("com/infogain/demo1/spring.xml");
 		BeanFactory factory=new XmlBeanFactory(res);*/
 		
-		ApplicationContext factory=new ClassPathXmlApplicationContext("com/infogain/demo1/spring.xml");
+		ApplicationContext factory=new ClassPathXmlApplicationContext("spring.xml");
 		Employee emp=(Employee)factory.getBean("emp");
 		System.out.println("Emp Id "+emp.getEmpId()+"Name "+emp.getName()+" Salary "+emp.getSalary());
 
