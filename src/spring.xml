@@ -1,8 +1,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
-	<!-- First bean defination -->
 
+	<!-- First bean defination -->
 	<bean id="emp" class="com.infogain.demo1.Employee">
 		<property name="empId" value="101"></property>
 		<property name="name" value="Ravic"></property>
@@ -12,6 +12,7 @@
 
 
 	<!-- Setter Based Injection -->
+	<!-- Second Demo Beans definition -->
 	<bean id="emp1" class="com.infogain.demo2.Employee">
 		<property name="empId" value="101"></property>
 		<property name="name" value="Ravic"></property>
@@ -23,15 +24,78 @@
 	</bean>
 
 	<!-- Constructor based injection -->
+	<!-- Third demo bean definitions -->
 	<bean id="emp2" class="com.infogain.demo3.Employee">
 		<constructor-arg value="101"></constructor-arg>
 		<constructor-arg value="Ravic"></constructor-arg>
 		<constructor-arg ref="add2"></constructor-arg>
 	</bean>
-	
+
 	<bean id="add2" class="com.infogain.demo3.Address">
 		<constructor-arg value="Noida"></constructor-arg>
 	</bean>
+
+
+	<!-- Fourth Demo bean definitions -->
+	<bean id="CustomerBean" class="com.infogain.demo4.Customer">
+
+		<!-- java.util.List -->
+		<property name="lists">
+			<list>
+				<value>1</value>
+				<ref bean="PersonBean" />
+				<bean class="com.infogain.demo4.Person">
+					<property name="name" value="mkyongList" />
+					<property name="address" value="address" />
+					<property name="age" value="28" />
+				</bean>
+			</list>
+		</property>
+
+		<!-- java.util.Set -->
+		<property name="sets">
+			<set>
+				<value>1</value>
+				<ref bean="PersonBean" />
+				<bean class="com.infogain.demo4.Person">
+					<property name="name" value="mkyongSet" />
+					<property name="address" value="address" />
+					<property name="age" value="28" />
+				</bean>
+			</set>
+		</property>
+
+		<!-- java.util.Map -->
+		<property name="maps">
+			<map>
+				<entry key="Key 1" value="1" />
+				<entry key="Key 2" value-ref="PersonBean" />
+				<entry key="Key 3">
+					<bean class="com.infogain.demo4.Person">
+						<property name="name" value="mkyongMap" />
+						<property name="address" value="address" />
+						<property name="age" value="28" />
+					</bean>
+				</entry>
+			</map>
+		</property>
+
+		<!-- java.util.Properties -->
+		<property name="pros">
+			<props>
+				<prop key="admin">admin@nospam.com</prop>
+				<prop key="support">support@nospam.com</prop>
+			</props>
+		</property>
+
+	</bean>
+
+	<bean id="PersonBean" class="com.infogain.demo4.Person">
+		<property name="name" value="mkyong1" />
+		<property name="address" value="address 1" />
+		<property name="age" value="28" />
+	</bean>
+
 
 
 
